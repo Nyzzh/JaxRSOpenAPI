@@ -1,8 +1,11 @@
 package fr.istic.taa.jaxrs.jpa;
 
 import jakarta.persistence.Entity;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 public class Client extends User {
     private String adresse;
     private String numeroTelephone;
@@ -19,6 +22,7 @@ public class Client extends User {
         this.numeroTelephone = numeroTelephone;
     }
 
+    @XmlElement(name = "adress")
     public String getAdresse() {
         return adresse;
     }

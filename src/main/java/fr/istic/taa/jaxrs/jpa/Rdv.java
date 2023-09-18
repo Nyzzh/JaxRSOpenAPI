@@ -1,6 +1,8 @@
 package fr.istic.taa.jaxrs.jpa;
 
 import jakarta.persistence.*;
+import jakarta.xml.bind.annotation.XmlElementRef;
+import jakarta.xml.bind.annotation.XmlTransient;
 
 @Entity
 public class Rdv {
@@ -13,6 +15,8 @@ public class Rdv {
     private String heure; // Heure du rendez-vous
 
     @ManyToOne
+    @XmlTransient
+
     private User client; // Client qui prend le rendez-vous
 
     @ManyToOne
@@ -53,6 +57,7 @@ public class Rdv {
         this.heure = heure;
     }
 
+    @XmlTransient
     public User getClient() {
         return client;
     }
@@ -61,6 +66,7 @@ public class Rdv {
         this.client = client;
     }
 
+    @XmlTransient
     public User getProfessionnel() {
         return professionnel;
     }

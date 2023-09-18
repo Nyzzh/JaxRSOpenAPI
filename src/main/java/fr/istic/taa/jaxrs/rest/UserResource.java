@@ -2,6 +2,7 @@ package fr.istic.taa.jaxrs.rest;
 
 import fr.istic.taa.jaxrs.domain.Pet;
 import io.swagger.v3.oas.annotations.Parameter;
+import jakarta.persistence.EntityManager;
 import jakarta.ws.rs.Consumes;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
@@ -9,16 +10,22 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.Response;
+import fr.istic.taa.jaxrs.jpa.*;
+import fr.istic.taa.jaxrs.dao.*;
 
-@Path("pet")
+@Path("/client")
 @Produces({"application/json", "application/xml"})
-public class PetResource {
+public class UserResource {
+
+  EntityManager manager = EntityManagerHelper.getEntityManager();
+
+  ClientDAO clientDAO = new ClientDAO(manager);
 
   @GET
-  @Path("/{petId}")
-  public Pet getPetById(@PathParam("petId") Long petId)  {
+  @Path("/{userId}")
+  public Client getClientById(@PathParam("userId") Long userId)  {
       // return pet
-      return new Pet();
+      return clientDAO.getClientById(userId);
   }
 
   @GET

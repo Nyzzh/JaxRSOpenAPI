@@ -1,10 +1,15 @@
 package fr.istic.taa.jaxrs.jpa;
 
 import jakarta.persistence.*;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlElements;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import java.util.List;
 
 @Entity
+@XmlRootElement
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,6 +36,7 @@ public class User {
 
     // Getters et setters
 
+    @XmlElement(name = "id")
     public Long getId() {
         return id;
     }
