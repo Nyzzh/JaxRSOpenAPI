@@ -13,7 +13,7 @@ import jakarta.ws.rs.core.Response;
 import fr.istic.taa.jaxrs.jpa.*;
 import fr.istic.taa.jaxrs.dao.*;
 
-@Path("/client")
+@Path("/user")
 @Produces({"application/json", "application/xml"})
 public class UserResource {
 
