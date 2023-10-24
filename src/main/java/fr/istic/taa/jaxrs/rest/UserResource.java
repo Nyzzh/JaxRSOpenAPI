@@ -19,7 +19,7 @@ public class UserResource {
 
   EntityManager manager = EntityManagerHelper.getEntityManager();
 
-  ClientDAO clientDAO = new ClientDAO(manager);
+  ClientDAO clientDAO = new ClientDAO();
 
   @GET
   @Path("/{userId}")

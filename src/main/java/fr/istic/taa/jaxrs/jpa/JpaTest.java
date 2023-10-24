@@ -16,7 +16,7 @@ public class JpaTest {
 	public static void main(String[] args) {
 		EntityManager manager = EntityManagerHelper.getEntityManager();
 		JpaTest test = new JpaTest(manager);
-		ClientDAO clientDAO = new ClientDAO(manager);
+		ClientDAO clientDAO = new ClientDAO();
 		ProDAO proDAO = new ProDAO(manager);
 		RdvDAO rdvDAO = new RdvDAO(manager);
 		try {

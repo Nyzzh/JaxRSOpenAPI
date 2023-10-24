@@ -7,11 +7,8 @@ import fr.istic.taa.jaxrs.jpa.*;
 import java.util.List;
 
 public class ClientDAO {
-    private EntityManager entityManager;
 
-    public ClientDAO(EntityManager entityManager) {
-        this.entityManager = entityManager;
-    }
+    private EntityManager entityManager =  EntityManagerHelper.getEntityManager();
 
     public void createClient(Client client) {
         entityManager.getTransaction().begin();
