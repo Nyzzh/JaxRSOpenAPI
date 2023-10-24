@@ -16,16 +16,18 @@ public class ClientDAO {
         entityManager.getTransaction().commit();
     }
 
-    public void updateClient(Client client) {
+    public Client updateClient(Long clientId, Client client) {
         entityManager.getTransaction().begin();
         entityManager.merge(client);
         entityManager.getTransaction().commit();
+        return client;
     }
 
-    public void deleteClient(Client client) {
+    public boolean deleteClient(Long client) {
         entityManager.getTransaction().begin();
         entityManager.remove(client);
         entityManager.getTransaction().commit();
+        return false;
     }
 
     public Client getClientById(Long clientId) {
@@ -35,5 +37,9 @@ public class ClientDAO {
     public List<Client> getAllClients() {
         Query query = entityManager.createQuery("SELECT c FROM Client c", Client.class);
         return query.getResultList();
+    }
+
+    public Client addClient(Client client) {
+        return client;
     }
 }
