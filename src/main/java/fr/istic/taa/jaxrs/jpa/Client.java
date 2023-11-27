@@ -4,9 +4,11 @@ import jakarta.persistence.Entity;
 import jakarta.xml.bind.annotation.XmlElement;
 import jakarta.xml.bind.annotation.XmlRootElement;
 
+import java.io.Serializable;
+
 @Entity
 @XmlRootElement
-public class Client extends User {
+public class Client extends User implements Serializable {
     private String adresse;
     private String numeroTelephone;
 

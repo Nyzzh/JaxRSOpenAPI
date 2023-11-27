@@ -13,7 +13,7 @@ public class ClientResource { // Modifie la classe UserResource en ClientResourc
 
   EntityManager manager = EntityManagerHelper.getEntityManager();
 
-  ClientDAO clientDAO = new ClientDAO(manager); // Remplace UserDAO par ClientDAO
+  ClientDAO clientDAO = new ClientDAO(); // Remplace UserDAO par ClientDAO
 
   @GET
   @Path("/{clientId}") // Modifie userId en clientId

@@ -3,6 +3,7 @@ package fr.istic.taa.jaxrs.dao;
 import jakarta.persistence.EntityManager;
 import fr.istic.taa.jaxrs.jpa.*;
 
+//Classe DAO pour la classe Rendez-Vous
 public class RdvDAO {
     private EntityManager entityManager;
 

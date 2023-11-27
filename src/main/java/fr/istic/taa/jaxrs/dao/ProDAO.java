@@ -6,6 +6,7 @@ import fr.istic.taa.jaxrs.jpa.*;
 
 import java.util.List;
 
+//Classe DAO pour la classe Professionel
 public class ProDAO {
     private EntityManager entityManager;
 

@@ -1,12 +1,14 @@
 package fr.istic.taa.jaxrs.dao;
 
+import fr.istic.taa.jaxrs.dao.generic.AbstractJpaDao;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
 import fr.istic.taa.jaxrs.jpa.*;
 
 import java.util.List;
 
-public class ClientDAO {
+//Classe DAO pour la classe Client
+public class ClientDAO extends AbstractJpaDao<Integer, Client> {
 
     private EntityManager entityManager =  EntityManagerHelper.getEntityManager();
 
